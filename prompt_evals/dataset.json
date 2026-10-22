@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Write a Python function that takes an S3 bucket name and an object key, and returns the full S3 URI in the format 's3://bucket-name/object-key'.",
+    "format": "python",
+    "solution_criteria": "Function accepts two string arguments (bucket name and object key), concatenates them with the 's3://' prefix and a '/' separator, and returns the resulting string. Should correctly handle keys with or without leading slashes and avoid duplicate slashes."
+  },
+  {
+    "task": "Create a JSON IAM policy document that allows read-only access (s3:GetObject and s3:ListBucket) to a specific S3 bucket named 'my-data-bucket'.",
+    "format": "json",
+    "solution_criteria": "Valid JSON with a 'Version' field set to '2012-10-17' and a 'Statement' array. The statement must include Effect 'Allow', Action array containing 's3:GetObject' and 's3:ListBucket', and Resource entries for both 'arn:aws:s3:::my-data-bucket' and 'arn:aws:s3:::my-data-bucket/*'."
+  },
+  {
+    "task": "Write a Python regex that matches valid AWS region codes such as 'us-east-1', 'eu-west-2', or 'ap-southeast-3', but rejects invalid strings like 'us-east', 'xx-north-1', or 'us-east-11'.",
+    "format": "regex",
+    "solution_criteria": "Regex matches the pattern of a valid AWS region: a known geographic prefix (us, eu, ap, sa, ca, me, af) followed by a direction (east, west, north, south, central, northeast, northwest, southeast, southwest), then a hyphen and a single digit. Should anchor with ^ and $ and not match invalid prefixes or multi-digit region numbers."
+  }
+]
